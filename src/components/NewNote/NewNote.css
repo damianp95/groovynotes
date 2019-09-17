@@ -1,0 +1,15 @@
+.newnote-bod{
+    background-color: blanchedalmond;
+    height:410;
+    width: 385px;
+    padding: 10px;
+    margin: auto;
+    border:solid 1px black;
+    border-radius: 5px;
+}
+
+textarea{
+    resize:none;
+    height:200px;
+    width:250px;
+}
