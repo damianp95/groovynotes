@@ -26,7 +26,6 @@ class Delete extends React.Component{
             notes:notesIn,
             deleteNote:appendingMessage,
             redirectToReferrer:false
-
          }   
 
          this.dontDelete=this.dontDelete.bind(this);
@@ -48,34 +47,20 @@ class Delete extends React.Component{
     letsDelete(){
         let notes = this.state.notes
         let index= this.state.index
-        console.log(index)
-       
 
-        console.log("First Break Point --------------------------");
-        console.log(index)
-
-
-        console.log(notes)
          var notesTwo =notes.splice(index,1)
-        console.log("Second Break Point --------------------------");
-        console.log(notes)
-
-          // Update local-storage.
-          var foo =JSON.stringify(notes);
-          localStorage.setItem("myObj", foo);
-          //distroy object in session
-          sessionStorage.removeItem('ChangingMessage');
+        var foo =JSON.stringify(notes);
+        localStorage.setItem("myObj", foo);
+        //distroy object in session
+        sessionStorage.removeItem('ChangingMessage');
 
         //Toast Message for delete
         toast.error("Deleted!", {
         position: toast.POSITION.BOTTOM_RIGHT});
         
-
         //Redirect back to home
         let redirectToReferrer= this.state.redirectToReferrer
         this.setState({redirectToReferrer:true})
-
-
 
     }
     render(){
@@ -87,7 +72,7 @@ class Delete extends React.Component{
 
         return(
 
-            <div>
+            <div class="delete-bod" >
                 <h3>Delete</h3>
                 <p>Are you sure you want to delete??</p>
                 <Button onClick={this.dontDelete}>
@@ -96,8 +81,8 @@ class Delete extends React.Component{
                 <Button className="btn-danger" onClick={this.letsDelete}>
                 <IoMdTrash/>
                  </Button>
-                <div className="delete-bod">
-                    <p>Title</p>
+                <div className="delete-box">
+
 
                     <h4>{this.state.title}</h4>
 
@@ -106,8 +91,7 @@ class Delete extends React.Component{
                  theme="bubble"
                     />
                 
-                    <br/>
-       
+                    <br/>       
                 </div>
             </div>
         )

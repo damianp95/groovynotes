@@ -1,5 +1,6 @@
 import React from 'react'
 import './About.css'
+import { IoLogoGithub } from "react-icons/io";
 
 class About extends React.Component{
     constructor(props){
@@ -19,19 +20,19 @@ class About extends React.Component{
                 <p>Create a simple React.JS application
                     that allows users to take notes.
                 </p>
-                <h3>Method</h3>
-                <p>Using </p>
-
-                <p>
-
-                </p>
-
                 <h2>Node Packages</h2>
                 <ul>
-                    <li>React-Toast - </li>
+                    <li>ReactToast </li>
                     <li>Quill</li>
                     <li>React-Router-Dom</li>
+                    <li>uuid</li>
+                    <li>React-Icons</li>
                 </ul>
+                <p>
+                    <IoLogoGithub fontSize="40px"/>
+                    <br/>
+                    <a href="https://github.com/dpasc/groovynotes">Source Code</a>
+                </p>
                 
                 
 
