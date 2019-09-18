@@ -1,7 +1,7 @@
 import React from 'react';
 import './Roww.css';
 import {Redirect} from 'react-router-dom'
-import {Button, Col} from 'react-bootstrap'
+import {Button, Col,Container,Row} from 'react-bootstrap'
 import { IoMdTrash, IoMdBuild } from "react-icons/io";
 import ReactQuill from 'react-quill';
 
@@ -55,7 +55,6 @@ class Roww extends React.Component{
 
         //Change value to redirect to Delete 
         this.setState({redirectToDelete:true})
-
     }
 
     render(){
@@ -68,36 +67,43 @@ class Roww extends React.Component{
         if (redirectToDelete === true) {
             return <Redirect to="./delete" />
         }
-
-
         return(
-            <Col md={4} >
-            <div className="row-bod">
-             <div> 
-                <div className="button-panel">
-                    <Button
-                    className="btn-sm"
-                    onClick={this.moveToEdit}>
-                    <IoMdBuild/>
-                    </Button>
-                    <Button className="btn-sm" onClick={this.moveToDelete}>
-                        <IoMdTrash/>
-                    </Button>
-                </div>
-                </div>
-            <h4 className="note-title">
-            {this.props.title}
-            </h4>
-               
-            <ReactQuill 
-            readOnly="true"
-            value={this.state.text}
-            theme="bubble"
-                    />
-        
-                
-            
-            </div>
+            <Col>
+            <Container className="row-bod">
+                <Row>
+                        <Col>
+                            <h4 className="mt-3">
+                            {this.props.title}
+                            </h4>
+                        </Col>
+                         <Col>
+                            <Button
+                            className="btn-sm mt-3"
+                            onClick={this.moveToEdit}>
+                            <IoMdBuild
+                            fontSize="20px"
+                            />
+                            </Button>
+                            <Button 
+                            className="btn-sm mt-3" 
+                            onClick={this.moveToDelete}>
+                                <IoMdTrash
+                                fontSize="20px"
+                                />
+                            </Button>
+                        </Col>
+                    </Row>
+                    <hr/>
+                    <Row >
+                        <Col>
+                            <ReactQuill 
+                            readOnly="true"
+                            value={this.state.text}
+                            theme="bubble"
+                            />
+                        </Col>
+                </Row>
+            </Container>
             </Col>
         )
     }

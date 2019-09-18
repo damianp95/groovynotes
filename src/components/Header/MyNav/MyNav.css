@@ -1,7 +1,12 @@
 .main-nav{
-background-color:white;
+    background-color: rgb(8, 85, 133);
+    height: 70px;
+    color:white;
+
 }
 
 .nav-link{
-    padding: 17px;
+
+    padding: 10px;
 }
+

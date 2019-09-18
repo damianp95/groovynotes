@@ -69,7 +69,7 @@ class MyContainer extends React.Component{
 
 
         return(
-            <div class="container-bod">
+            <div className="container-bod">
         <Container>
             <Row>
                 {collectionOfNotes}

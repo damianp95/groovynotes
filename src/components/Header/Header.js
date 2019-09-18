@@ -5,8 +5,8 @@ import MyNav from './MyNav/MyNav'
 function Header(){
     return(
         <div className="main-header">
-            <h3>Groovy Notes!</h3>
-            <MyNav/>
+            <h1>Groovy Notes!</h1>
+            
         </div>
     )
 }

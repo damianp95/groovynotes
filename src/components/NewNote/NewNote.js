@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReactQuill from 'react-quill';
 
+
 class NewNote extends React.Component{
     constructor(props){
         super(props)
@@ -90,10 +91,13 @@ class NewNote extends React.Component{
                 name="title"
                 value={this.state.title}
                 onChange={this.handleChangeTitle}
+                maxLength="22"
                 />
                 <p>Note:</p>
             
-                <ReactQuill value={this.state.text}
+                <ReactQuill 
+                    value={this.state.text}
+                    
                     onChange={this.handleChange}/>
                 <br/>
                 </form>

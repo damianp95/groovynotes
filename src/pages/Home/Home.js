@@ -6,23 +6,13 @@ import MyContainer from '../../components/MyContainer/MyContainer'
 class Home extends React.Component{
     constructor(props){
         super(props)
-
-     
-
-
-
-        this.state={
-        
+        this.state={      
         }        
     }
-
-
-
     render(){
         return(
             <div className="home-bod">
-                <MyContainer class="container-fluid"/>
-                    
+                <MyContainer />     
               
                 <br/>
             </div>

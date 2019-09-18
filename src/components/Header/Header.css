@@ -1,5 +1,10 @@
 .main-header{
-    background-color: lightskyblue;
-    
+    background-color: rgb(8, 85, 133);
+    color:white;
+    border-bottom: solid rgba(2, 8, 12, 0.212) 5px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
     
 }

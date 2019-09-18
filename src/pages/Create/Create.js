@@ -2,7 +2,6 @@ import React from 'react';
 import './Create.css';
 import NewNote from '../../components/NewNote/NewNote';
 
-
 class Create extends React.Component{
 
     constructor(props){
@@ -12,11 +11,7 @@ class Create extends React.Component{
         }  
         
     }
-
     render(){
-
-
-
         return(
 
             <div className="create-bod">
@@ -24,7 +19,6 @@ class Create extends React.Component{
                 <div>
                     <NewNote
                      className="note-form"/>
-                   
                 </div>
             </div>
         )

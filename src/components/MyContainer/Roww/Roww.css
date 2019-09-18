@@ -1,19 +1,24 @@
 .row-bod{
-    background-color:lightcyan;
-    border: solid 1px darkcyan;
-
-    margin: auto;
+    background-color:rgb(243, 245, 160);
+    border: solid 1px darkc;
+    margin: 10px;
     margin-top: 5px;
     border-radius: 5px;
     height: 450px;
-    width: 350px;
+    width: 450px;
     box-shadow: 10px 10px 5px grey;
+    overflow:hidden;
 }
 
 .note-title{
     background-color:cadetblue;
     color:white;
 }
+
+.col{
+    width:380;
+}
+
 
 .dashboard{
     height:40px;

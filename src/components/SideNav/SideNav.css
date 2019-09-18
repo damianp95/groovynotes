@@ -1,0 +1,19 @@
+.main-side-nav{
+    width: 100px;
+    height:100%;
+   
+    background-color: rgb(8, 85, 133);
+    color:white;
+    border-bottom: solid rgba(2, 8, 12, 0.212) 5px;
+   
+   
+    position:fixed;
+    bottom:0;
+    left:0;
+    text-align: left;
+
+    padding-left:25px;
+    padding-top:150px;
+
+
+  } 
