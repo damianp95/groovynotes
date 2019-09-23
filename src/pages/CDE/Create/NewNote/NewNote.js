@@ -8,7 +8,7 @@ import ReactQuill from 'react-quill';
 import {getLocalItem, setLocalItem
 } from '../../../../services/Storage/Storage'
 
-
+ 
 class NewNote extends React.Component{
     constructor(props){
         super(props)

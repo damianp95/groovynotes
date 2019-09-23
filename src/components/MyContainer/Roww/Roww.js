@@ -97,7 +97,7 @@ class Roww extends React.Component{
                                 />
                             </Button>
                         </Col>
-                    </Row>
+                    </Row> 
                     <hr/>
                     <Row >
                         <Col>

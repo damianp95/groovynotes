@@ -1,7 +1,7 @@
 import React from 'react';
 import './Create.css';
 import NewNote from './NewNote/NewNote';
-
+ 
 
 class Create extends React.Component{
 

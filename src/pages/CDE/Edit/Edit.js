@@ -68,7 +68,7 @@ class Edit extends React.Component{
         this.setState({redirectToReferrer:true})      
     }
     render(){
-              
+               
         const redirectToReferrer = this.state.redirectToReferrer;
         if (redirectToReferrer === true) {
             return <Redirect to="./" />

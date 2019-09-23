@@ -7,7 +7,7 @@ import {Container,Row,Col} from 'react-bootstrap';
 class MyContainer extends React.Component{
     constructor(props){
         super(props)
-         
+          
   
         this.state={
            notes:[],

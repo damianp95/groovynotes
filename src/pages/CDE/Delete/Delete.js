@@ -14,7 +14,7 @@ class Delete extends React.Component{
         super()
         //get note being changed
         let appendingMessage = getSessionItem("DeleteMessage");
-
+ 
         //get collection of notes
         let notesIn= getLocalItem("noteCollection");
 

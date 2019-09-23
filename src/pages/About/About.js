@@ -8,7 +8,7 @@ class About extends React.Component{
 
         this.state={
 
-        }        
+        }           
     }
 
     render(){
