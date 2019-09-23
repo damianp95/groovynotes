@@ -21,7 +21,7 @@ class Edit extends React.Component{
         this.state={
             id: appendingMessage.id,
             title: appendingMessage.title,
-            text: appendingMessage.text,
+            content: appendingMessage.content,
             index: appendingMessage.index,
             notes:notesIn,
             editNote:appendingMessage,
@@ -33,7 +33,7 @@ class Edit extends React.Component{
     }
 
   handleChange(value) {
-    this.setState({ text: value })
+    this.setState({ content: value })
   }
   handleChangeTitle(event){
     const {name,value} = event.target
@@ -45,12 +45,12 @@ class Edit extends React.Component{
 
         let notes = this.state.notes
 
-        const {title, text} = this.state;
+        const {title, content} = this.state;
         let editNote =
         {
             id:this.state.id,
             title:title,
-            text:text
+            content:content
         }
         notes[this.state.index] = editNote;
 
@@ -95,7 +95,7 @@ class Edit extends React.Component{
 
                         <p>Note:</p>
 
-                        <ReactQuill value={this.state.text}
+                        <ReactQuill value={this.state.content}
                         onChange={this.handleChange}/>
                 </div>
             </div>

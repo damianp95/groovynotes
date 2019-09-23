@@ -21,7 +21,7 @@ class Delete extends React.Component{
         this.state={
             id: appendingMessage.id,
             title: appendingMessage.title,
-            text: appendingMessage.text,
+            content: appendingMessage.content,
             index: appendingMessage.index,
             notes:notesIn,
             deleteNote:appendingMessage,
@@ -82,10 +82,12 @@ class Delete extends React.Component{
                     onClick={this.letsDelete}>
                         <IoMdTrash/>
                     </Button>
+                    <hr/>
                     <div className="delete-box">
                         <h4>{this.state.title}</h4>
+                        <hr/>
                         <ReactQuill readOnly="true"
-                        value={this.state.text}
+                        value={this.state.content}
                         theme="bubble"
                             />
                         <br/>       

@@ -15,7 +15,7 @@ class NewNote extends React.Component{
         this.state={
           notes:[],
             title:"",
-            text:"",
+            content:"",
             redirectToReferrer:false
         }        
         this.handleChange=this.handleChange.bind(this);
@@ -30,7 +30,7 @@ class NewNote extends React.Component{
     })
  }
  handleChange(value) {
-    this.setState({ text: value })
+    this.setState({ content: value })
   }
 
  onAdd(){
@@ -39,12 +39,12 @@ class NewNote extends React.Component{
    let notes = getLocalItem("noteCollection")
 
     //set values for new note
-     const {title, text} = this.state;
+     const {title, content} = this.state;
         let newNote =
         {
             id:uuid.v4(),
             title: title,
-            text: text,
+            content: content,
         }
 
        notes.push(newNote);
@@ -85,7 +85,7 @@ class NewNote extends React.Component{
                         />
                     <p>Note:</p>
                     <ReactQuill 
-                    value={this.state.text}
+                    value={this.state.content}
                     onChange={this.handleChange}/>
                     <br/>
                 </form>

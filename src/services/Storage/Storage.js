@@ -5,7 +5,7 @@ export const getLocalItem = function (key) {
     item = JSON.parse(item);
     return item;
 }
-
+ 
 export const setLocalItem = function (key, value) {
     value = JSON.stringify(value);
     localStorage.setItem(key, value);

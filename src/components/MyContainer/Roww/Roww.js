@@ -17,7 +17,7 @@ class Roww extends React.Component{
         this.state={
             noteup:[],
             title:this.props.title,
-            text:this.props.text,
+            content:this.props.content,
             id:this.props.id,
             index: this.props.index
         }        
@@ -27,12 +27,12 @@ class Roww extends React.Component{
 
     moveToEdit(){
 
-        const {title,text,id,index} = this.state;
+        const {title,content,id,index} = this.state;
         let upNote ={
             id:id,
             index: index,
             title:title,
-            text:text
+            content:content
         }
 
         upNote = JSON.stringify(upNote);
@@ -44,12 +44,12 @@ class Roww extends React.Component{
 
     moveToDelete(){
 
-        const {title,text,id,index} = this.state;
+        const {title,content,id,index} = this.state;
         let upNote ={
             id:id,
             index: index,
             title:title,
-            text:text,
+            content:content,
             redirectToEdit:false,
             redirectToDelete:false
         }
@@ -103,7 +103,7 @@ class Roww extends React.Component{
                         <Col>
                             <ReactQuill 
                             readOnly="true"
-                            value={this.state.text}
+                            value={this.state.content}
                             theme="bubble"
                             />
                         </Col>

@@ -14,7 +14,7 @@ class MyContainer extends React.Component{
            primArr:[],
            id:"",
            title:"",
-           text:""
+           content:""
         }        
     }
     componentDidMount(){
@@ -22,7 +22,7 @@ class MyContainer extends React.Component{
         let newNote ={
           id:uuid.v4,
           title: "Something Interesting",
-          text: "What will we take notes on today??"
+          content: "What will we take notes on today??"
         }
 
         let newArr = this.state.primArr.map(note => note);
@@ -64,7 +64,7 @@ class MyContainer extends React.Component{
                     id={note.id}
                     index={index}
                     title={note.title}
-                    text={note.text}
+                    content={note.content}
                 />
                 </Col>
                 )   
