@@ -6,17 +6,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import ReactQuill from 'react-quill';
 import {Button} from 'react-bootstrap'
 import { IoMdTrash , IoIosArrowRoundBack } from 'react-icons/io';
+import {getSessionItem, getLocalItem, setLocalItem, removeSessionItem
+} from '../../../services/Storage/Storage';
 
 class Delete extends React.Component{
     constructor(){
         super()
         //get note being changed
-        let appendingMessage = sessionStorage.getItem("DeleteMessage");
-        appendingMessage = JSON.parse(appendingMessage);
+        let appendingMessage = getSessionItem("DeleteMessage");
 
         //get collection of notes
-        let notesIn= localStorage.getItem("myObj");
-        notesIn = JSON.parse(notesIn);
+        let notesIn= getLocalItem("noteCollection");
 
         this.state={
             id: appendingMessage.id,
@@ -35,7 +35,7 @@ class Delete extends React.Component{
     dontDelete(){
         //Destroy session storage and make no changes to the 
         // main array
-        sessionStorage.removeItem('DeleteMessage');
+        removeSessionItem('DeleteMessage');
 
         //Redirect back to home
         let redirectToReferrer= this.state.redirectToReferrer
@@ -48,11 +48,10 @@ class Delete extends React.Component{
         let notes = this.state.notes
         let index= this.state.index
 
-         var notesTwo =notes.splice(index,1)
-        var foo =JSON.stringify(notes);
-        localStorage.setItem("myObj", foo);
+        var notesTwo=notes.splice(index,1)
+        setLocalItem("noteCollection", notes);
         //distroy object in session
-        sessionStorage.removeItem('ChangingMessage');
+        removeSessionItem('DeleteMessage');
 
         //Toast Message for delete
         toast.error("Deleted!", {
@@ -71,29 +70,27 @@ class Delete extends React.Component{
         }
 
         return(
-
-            <div class="delete-bod" >
-                <h3>Delete</h3>
-                <p>Are you sure you want to delete??</p>
-                <Button onClick={this.dontDelete}>
-                    <IoIosArrowRoundBack/>
-                </Button>  
-                <Button className="btn-danger" onClick={this.letsDelete}>
-                <IoMdTrash/>
-                 </Button>
-                <div className="delete-box">
-
-
-                    <h4>{this.state.title}</h4>
-
-                <ReactQuill readOnly="true"
-                 value={this.state.text}
-                 theme="bubble"
-                    />
-                
-                    <br/>       
+                <div class="delete-bod" >
+                    <h3>Delete</h3>
+                    <p>Are you sure you want to delete??</p>
+                    <Button 
+                    onClick={this.dontDelete}>
+                        <IoIosArrowRoundBack/>
+                    </Button>  
+                    <Button 
+                    className="btn-danger" 
+                    onClick={this.letsDelete}>
+                        <IoMdTrash/>
+                    </Button>
+                    <div className="delete-box">
+                        <h4>{this.state.title}</h4>
+                        <ReactQuill readOnly="true"
+                        value={this.state.text}
+                        theme="bubble"
+                            />
+                        <br/>       
+                    </div>
                 </div>
-            </div>
         )
     }
 }

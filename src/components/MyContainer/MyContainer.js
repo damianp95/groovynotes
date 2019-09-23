@@ -32,18 +32,20 @@ class MyContainer extends React.Component{
         });
 
  
-        if(!localStorage.getItem("myObj")){
+        if(!localStorage.getItem("noteCollection")){
           let foo= JSON.stringify(newArr);
-           localStorage.setItem("myObj", foo);
+           localStorage.setItem("noteCollection", foo);
            
        }
        
      
   
-        let notesStored = localStorage.getItem("myObj");
+        let notesStored = localStorage.getItem("noteCollection");
         notesStored = JSON.parse(notesStored);
 
         let notes = this.setState({
+
+
             notes:notesStored
 
         

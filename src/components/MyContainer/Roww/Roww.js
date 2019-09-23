@@ -5,6 +5,11 @@ import {Button, Col,Container,Row} from 'react-bootstrap'
 import { IoMdTrash, IoMdBuild } from "react-icons/io";
 import ReactQuill from 'react-quill';
 
+
+// Note:The original name for this component was Row 
+//however, to avoid conflict with React Bootstrap it has been changed to Roww
+
+
 class Roww extends React.Component{
     constructor(props){
         super(props)
@@ -85,7 +90,7 @@ class Roww extends React.Component{
                             />
                             </Button>
                             <Button 
-                            className="btn-sm mt-3" 
+                            className="btn-sm mt-3 btn-danger" 
                             onClick={this.moveToDelete}>
                                 <IoMdTrash
                                 fontSize="20px"

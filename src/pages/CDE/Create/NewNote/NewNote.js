@@ -5,6 +5,8 @@ import {Redirect} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReactQuill from 'react-quill';
+import {getLocalItem, setLocalItem
+} from '../../../../services/Storage/Storage'
 
 
 class NewNote extends React.Component{
@@ -31,16 +33,13 @@ class NewNote extends React.Component{
     this.setState({ text: value })
   }
 
-
  onAdd(){
 
     //get notes from localstorage
-    let notes = this.state;
-    notes= localStorage.getItem("myObj");
-    notes = JSON.parse(notes);
+   let notes = getLocalItem("noteCollection")
 
     //set values for new note
-     const {title, text,} = this.state;
+     const {title, text} = this.state;
         let newNote =
         {
             id:uuid.v4(),
@@ -53,17 +52,9 @@ class NewNote extends React.Component{
             notes: notes
         });
     
-        //Set Title, text
-        this.setState({
-            title: '',
-             text: ''
-        });
-
         // Update local-storage.
-        var foo =JSON.stringify(notes);
-        localStorage.setItem("myObj", foo);
-
-
+         setLocalItem("noteCollection", notes)
+         
         //Toast Message for delete
         toast.info("New Note Added!", {
          position: toast.POSITION.BOTTOM_RIGHT});
@@ -71,7 +62,6 @@ class NewNote extends React.Component{
         //Redirect back to home
         let redirectToReferrer= this.state.redirectToReferrer
         this.setState({redirectToReferrer:true})
-
         }
 
 
@@ -86,20 +76,18 @@ class NewNote extends React.Component{
         return(
             <div className="newnote-bod">
                 <form>
-                <p>Title</p>
-                <input type="text"
-                name="title"
-                value={this.state.title}
-                onChange={this.handleChangeTitle}
-                maxLength="22"
-                />
-                <p>Note:</p>
-            
-                <ReactQuill 
+                    <p>Title</p>
+                        <input type="text"
+                        name="title"
+                        value={this.state.title}
+                        onChange={this.handleChangeTitle}
+                        maxLength="22"
+                        />
+                    <p>Note:</p>
+                    <ReactQuill 
                     value={this.state.text}
-                    
                     onChange={this.handleChange}/>
-                <br/>
+                    <br/>
                 </form>
                 <button onClick={this.onAdd}>Add</button>
             </div>

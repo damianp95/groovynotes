@@ -1,7 +1,15 @@
+h3{
+    margin-top:100px;
+}
+
+
 .edit-bod{
     background-color:lightcyan;
     border: solid 1px darkcyan;
     width: 500px;
     margin: auto;
     padding: 10px;
+    box-shadow: 10px 10px 5px grey;
+
 }
+

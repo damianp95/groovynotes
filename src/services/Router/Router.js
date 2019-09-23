@@ -3,9 +3,9 @@ import {Switch, Route} from 'react-router-dom'
 import Home from '../../pages/Home/Home'
 import About from '../../pages/About/About'
 import NotFound from '../../pages/NotFound/NotFound'
-import Create from '../../pages/Create/Create'
-import Edit from '../../components/CRUD/Edit/Edit'
-import Delete from '../../components/CRUD/Delete/Delete'
+import Create from '../../pages/CDE/Create/Create'
+import Edit from '../../pages/CDE/Edit/Edit'
+import Delete from '../../pages/CDE/Delete/Delete'
 
 
 function Router(){

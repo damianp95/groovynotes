@@ -17,8 +17,10 @@ class About extends React.Component{
                 <h1>About Project</h1>
                 <h2>Groovy Notes </h2>
                 <h3>Objective</h3>
-                <p>Create a simple React.JS application
-                    that allows users to take notes.
+                <p>Create a notepad app will allows 
+                    users to create and view a list of
+                    notes. The user can add, edit and 
+                    delete notes using the React application.
                 </p>
                 <h2>Node Packages</h2>
                 <ul>
